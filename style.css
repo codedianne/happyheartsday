@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	min-height: 100vh;
+	background: #111;
+	overflow: hidden;
+}
+h1{
+	color: red;
+	text-align: center;
+	font-size: 100px;
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+span{
+	position: absolute;
+	pointer-events: none;
+	animation: moveShape 10s linear infinite;
+}
+span::before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: url(./images/heart.png);
+	background-size: cover;
+	animation: moveShape 10s linear infinite;
+}
+@keyframes moveShape{
+	0%{
+		transform: translate(0) rotate(0deg);
+	}
+	100%{
+		transform: translate(250px) rotate(360deg);
+	}
+}

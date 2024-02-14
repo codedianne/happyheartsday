@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <title>Portfolio Website</title> -->
+	<title>Happy Valentine's Day</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<h1>Happy Valentine's Day</h1>
+	<script>
+		document.addEventListener('mousemove', function(e){
+			let body = document.querySelector('body');
+			let heart = document.createElement('span');
+			let x = e.offsetX;
+			let y = e.offsetY;
+			heart.style.left = x+ 'px';
+			heart.style.top = y+ 'px';
+
+			body.appendChild(heart);
+
+			setTimeout(function(){
+				heart.remove();
+			}, 1000)
+		})
+	</script>
+</body>
+</html>
