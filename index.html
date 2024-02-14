@@ -26,9 +26,16 @@
 			}, 1000)
 		})
 	</script> -->
-	<script>
+	<!-- Heart Animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setInterval(function() {
+            createHeart(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
+        }, 1000);
+    });
+
     document.addEventListener('mousemove', function(e){
-        createHeart(e.offsetX, e.offsetY);
+        createHeart(e.clientX, e.clientY);
     });
 
     document.addEventListener('touchstart', function(e){
@@ -48,5 +55,20 @@
         }, 1000);
     }
 </script>
+
+<!-- Image that Suddenly Appears -->
+<script>
+    setTimeout(function() {
+        let body = document.querySelector('body');
+        let image = document.createElement('img');
+        image.src = './images/freddy.png'; 
+        image.classList.add('image');
+        body.appendChild(image);
+        setTimeout(function(){
+            image.style.display = 'block';
+        }, 2000); // Adjust the delay (in milliseconds) before the image appears
+    }, 5000); // Adjust the delay (in milliseconds) before the image creation
+</script>
+
 </body>
 </html>
