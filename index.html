@@ -9,7 +9,8 @@
 </head>
 <body>
 	<h1>Happy Valentine's Day</h1>
-	<script>
+	<!-- heart animation effects -->
+<!-- 	<script>
 		document.addEventListener('mousemove', function(e){
 			let body = document.querySelector('body');
 			let heart = document.createElement('span');
@@ -24,6 +25,28 @@
 				heart.remove();
 			}, 1000)
 		})
-	</script>
+	</script> -->
+	<script>
+    document.addEventListener('mousemove', function(e){
+        createHeart(e.offsetX, e.offsetY);
+    });
+
+    document.addEventListener('touchstart', function(e){
+        let touch = e.touches[0];
+        createHeart(touch.clientX, touch.clientY);
+    });
+
+    function createHeart(x, y) {
+        let body = document.querySelector('body');
+        let heart = document.createElement('span');
+        heart.classList.add('heart');
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        body.appendChild(heart);
+        setTimeout(function(){
+            heart.remove();
+        }, 1000);
+    }
+</script>
 </body>
 </html>
